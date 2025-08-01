@@ -46,18 +46,38 @@
       text-align: center;
       font-size: 14px;
     }
-    .install-btn {
-      display: inline-block;
-      background-color: #3574f0;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 24px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      margin: 15px 0;
-      cursor: pointer;
-    }
+    .install-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.install-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3574f0;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.install-btn:hover {
+  background-color: #1f5ae0;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
     .screenshots {
       display: flex;
       overflow-x: auto;
@@ -131,7 +151,16 @@
       </div>
     </div>
 
-    <a class="install-btn" id="installBtn" href="https://github.com/LeiamNash/Anisubslash/releases/download/3.0/Anisubslash.v3.0.apk" target="_blank">Install</a>
+   <div class="install-grid">
+  <a class="install-btn" href="https://github.com/LeiamNash/Anisubslash/releases/download/3.0/Anisubslash.v3.0.apk" target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="white"><path d="M17.6 13.5c-.1-2.1 1.6-3.2 1.7-3.3-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.1.8s-1.6-.7-2.6-.7c-1.3.1-2.4.8-3.1 1.9-1.3 2.2-.3 5.5.9 7.3.6.9 1.3 1.9 2.3 1.8.9-.1 1.3-.6 2.5-.6s1.5.6 2.5.6 1.6-.9 2.2-1.8c.7-1 1-2 1-2-.1 0-2.3-.9-2.4-3.4zM14.5 6.4c.6-.7 1-1.7.8-2.7-.8.1-1.8.6-2.3 1.3-.5.6-.9 1.7-.8 2.6.9.1 1.7-.5 2.3-1.2z"/></svg>
+    Install for Android
+  </a>
+  <a class="install-btn" href="/ios">
+    <svg class="icon" viewBox="0 0 24 24" fill="white"><path d="M16.365 1.43c0 1.14-.424 2.012-1.266 2.706-.78.656-1.672 1.03-2.675.956-.056-1.027.376-1.91 1.288-2.63.41-.34.898-.612 1.465-.813.568-.2 1.072-.225 1.51-.12 0 .3-.044.61-.144.92.11-.006.218-.015.322-.025zm4.09 16.905c-.31.716-.672 1.387-1.09 2.01-.498.75-1.03 1.433-1.593 2.05-.497.56-1.04.84-1.63.843-.42 0-.945-.13-1.57-.392a5.227 5.227 0 0 0-1.63-.39c-.612 0-1.27.13-1.976.39-.575.244-1.06.375-1.455.392-.63.027-1.21-.275-1.736-.9a17.488 17.488 0 0 1-2.26-3.463 11.978 11.978 0 0 1-1.313-4.543c-.095-2.363.56-4.31 1.968-5.843a5.264 5.264 0 0 1 4.01-1.7c.633 0 1.45.204 2.45.61.24.09.558.226.953.41.393.185.65.28.765.29.27 0 .663-.126 1.177-.38a4.517 4.517 0 0 1 2.08-.44c.008.03.072.25.19.664a6.477 6.477 0 0 1-.558 5.076c-.325.625-.864 1.17-1.615 1.636a4.18 4.18 0 0 0-.662.462 3.92 3.92 0 0 0-.473.526c-.18.237-.353.555-.52.95-.16.38-.23.81-.21 1.29.01.556.138 1.06.383 1.51.22.43.526.827.918 1.19.36.33.685.6.974.8z"/></svg>
+    Install for iOS
+  </a>
+   </div>
     
     <div class="screenshots">
       <img src="https://raw.githubusercontent.com/LeiamNashRebirth/anisubweb/refs/heads/main/Screenshot_2025-07-26-23-40-31-633_com.leiamnash.anisubslash.jpg" alt="screenshot">
