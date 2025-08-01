@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <title>Anisubslash - installion for your ios devices</title>
+
+  <link rel="manifest" href="data:application/manifest+json,{
+    &quot;name&quot;: &quot;Anisubslash version 3.1&quot;,
+    &quot;short_name&quot;: &quot;Anisubslash&quot;,
+    &quot;start_url&quot;: &quot;/&quot;,
+    &quot;display&quot;: &quot;standalone&quot;,
+    &quot;background_color&quot;: &quot;#111111&quot;,
+    &quot;theme_color&quot;: &quot;#111111&quot;,
+    &quot;icons&quot;: [
+      {&quot;src&quot;: &quot;icon-512x512.png&quot;, &quot;sizes&quot;: &quot;512x512&quot;, &quot;type&quot;: &quot;image/png&quot;}
+    ]
+  }" />
+  
+  <link rel="apple-touch-icon" href="icon-512x512.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      max-width: 500px;
+      margin-bottom: 15px;
+    }
+    ol {
+      text-align: left;
+      max-width: 500px;
+      font-size: 15px;
+      padding-left: 20px;
+    }
+    img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    .highlight {
+      color: #4fc3f7;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="icon-512x512.png" alt="App Icon" />
+  <h1>Anisubslash</h1>
+
+  <p>To install anisubslash on your ios device:</p>
+  <ol>
+    <li>Tap the <span class="highlight">Share</span> icon in Safari (at the bottom of the screen on iPhone, or top on iPad).</li>
+    <li>Scroll down and tap <span class="highlight">Add to Home Screen</span>.</li>
+    <li>Tap <span class="highlight">Add</span> in the top right corner to confirm.</li>
+    <li>The app will now appear on your Home Screen like a native app.</li>
+  </ol>
+
+  <script>
+    const redirectUrl = "https://leiamnashprojectnewgenofaninash.vercel.app/home";
+    const androidRedirect = "/";
+
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function isInStandaloneMode() {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+    }
+
+    if (!isIOS()) {
+      window.location.href = androidRedirect;
+    }
+
+    if (isIOS() && isInStandaloneMode()) {
+      window.location.href = redirectUrl;
+    }
+
+    if ('serviceWorker' in navigator) {
+      const swCode = `
+        self.addEventListener('install', e => self.skipWaiting());
+        self.addEventListener('activate', e => self.clients.claim());
+      `;
+      const blob = new Blob([swCode], { type: 'application/javascript' });
+      const swURL = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(swURL);
+    }
+  </script>
+
+</body>
+</html>
