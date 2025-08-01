@@ -149,16 +149,8 @@
         <strong>3.0 MB</strong><br>
         Size
       </div>
-      <div>
-        <strong id="downloadCount">0</strong><br>
-        Downloads
-      </div>
     </div>
 
-
-
-
-    <p>Download Platform:</p>
 
 <a href="https://github.com/LeiamNash/Anisubslash/releases/download/3.0/Anisubslash.v3.0.apk" target="_blank">
   <img src="public/android.png" alt="Install for Android" style="width: 180px; height: auto; display: inline-block; margin: 15px 10px 15px 0; cursor: pointer;" />
@@ -173,11 +165,11 @@
     
     
     <div class="screenshots">
-      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/anisubweb/refs/heads/main/Screenshot_2025-07-26-23-40-31-633_com.leiamnash.anisubslash.jpg" alt="screenshot">
-      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/anisubweb/refs/heads/main/Screenshot_2025-07-26-23-40-37-149_com.leiamnash.anisubslash.jpg" alt="screenshot">
-      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/anisubweb/refs/heads/main/Screenshot_2025-07-26-23-42-11-075_com.leiamnash.anisubslash.jpg" alt="screenshot">
-      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/anisubweb/refs/heads/main/Screenshot_2025-07-26-23-43-09-032_com.leiamnash.anisubslash.jpg" alt="screenshot">
-      <img src="https://raw.githubusercontent.com/LeiamNashRebirth/anisubweb/refs/heads/main/Screenshot_2025-07-26-23-43-16-952_com.leiamnash.anisubslash.jpg" alt="screenshot">
+      <img src="Screenshot_2025-07-26-23-40-31-633_com.leiamnash.anisubslash.jpg" alt="screenshot">
+      <img src="Screenshot_2025-07-26-23-40-37-149_com.leiamnash.anisubslash.jpg" alt="screenshot">
+      <img src="Screenshot_2025-07-26-23-42-11-075_com.leiamnash.anisubslash.jpg" alt="screenshot">
+      <img src="Screenshot_2025-07-26-23-43-09-032_com.leiamnash.anisubslash.jpg" alt="screenshot">
+      <img src="Screenshot_2025-07-26-23-43-16-952_com.leiamnash.anisubslash.jpg" alt="screenshot">
     </div>
 
     <h3>About this app</h3>
@@ -199,22 +191,6 @@
     </div>
   </div>
 
-  <script>
-    let baseDownloads = 1;
-    const downloadKey = "hensubslash_downloaded";
-    const downloadCountElement = document.getElementById("downloadCount");
-    let savedCount = parseInt(localStorage.getItem("hensubslash_count")) || baseDownloads;
-    downloadCountElement.innerText = savedCount.toLocaleString();
 
-    document.getElementById("installBtn").addEventListener("click", function () {
-      const alreadyDownloaded = localStorage.getItem(downloadKey);
-      if (!alreadyDownloaded) {
-        savedCount++;
-        localStorage.setItem(downloadKey, "true");
-        localStorage.setItem("hensubslash_count", savedCount);
-        downloadCountElement.innerText = savedCount.toLocaleString();
-      }
-    });
-  </script>
 </body>
 </html>
